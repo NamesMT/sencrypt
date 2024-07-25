@@ -51,23 +51,14 @@ import { decrypt as aesGcmDecrypt, encrypt as aesGcmEncrypt } from '@namesmt/aes
 export class MemoryStorage implements SEncryptStorageInterface {
   saltStore: Record<string, string> = {}
 
-  cipherStore: Record<string, string> = {}
-
   async getSalt(partition: string, id: string) { return this.saltStore[`${partition}#${id}`] }
   async setSalt(partition: string, id: string, value: string) { this.saltStore[`${partition}#${id}`] = value }
-
-  async getCiphertext(partition: string, id: string) { return this.cipherStore[`${partition}#${id}`] }
-  async setCiphertext(partition: string, id: string, value: string) { this.cipherStore[`${partition}#${id}`] = value }
 }
 
 export class AesGcmEncrypter implements SEncryptEncrypterInterface {
-  encrypt = async (plaintext: string, password: string) => {
-    return aesGcmEncrypt(plaintext, password)
-  }
+  encrypt = aesGcmEncrypt
 
-  decrypt = async (ciphertext: string, password: string) => {
-    return aesGcmDecrypt(ciphertext, password)
-  }
+  decrypt = aesGcmDecrypt
 }
 
 // A simple hash function for demo purposes
