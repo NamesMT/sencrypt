@@ -1,5 +1,5 @@
 {
-  "name": "starter-ts",
+  "name": "@namesmt/sencrypt",
   "type": "module",
   "version": "0.1.0",
   "packageManager": "pnpm@9.6.0",
@@ -7,12 +7,12 @@
   "author": "NamesMT <dangquoctrung123@gmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/namesmt",
-  "homepage": "https://github.com/namesmt/starter-ts#readme",
+  "homepage": "https://github.com/namesmt/sencrypt#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/namesmt/starter-ts.git"
+    "url": "git+https://github.com/namesmt/sencrypt.git"
   },
-  "bugs": "https://github.com/namesmt/starter-ts/issues",
+  "bugs": "https://github.com/namesmt/sencrypt/issues",
   "keywords": [],
   "sideEffects": false,
   "exports": {
@@ -47,8 +47,12 @@
     "prepare": "simple-git-hooks",
     "prepublishOnly": "pnpm run build"
   },
+  "peerDependencies": {
+    "@namesmt/shash": ">=0.3.1"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^2.23.2",
+    "@namesmt/aes-gcm": "^0.1.1",
     "@namesmt/utils": "^0.5.0",
     "@types/node": "^20.14.12",
     "@vitest/coverage-v8": "^2.0.4",

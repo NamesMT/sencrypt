@@ -1,2 +1,7 @@
-export * from './logger'
-export const shouldBe200 = 200
+export { SEncrypt } from './SEncrypt'
+export type { SEncryptStorageInterface } from './SEncrypt'
+
+export type {
+  SHashStorageInterface,
+  SHash,
+} from '@namesmt/shash'
