@@ -91,4 +91,18 @@ export class SEncrypt {
 
     return await this.decrypt(salt, partition, id, ciphertext)
   }
+
+  /**
+   * Retrieves the ciphertext from the storage, then,  
+   * Decrypts a ciphertext that was secured with a hash key created from the given salt, partition and id, back into plaintext.  
+   * 
+   * After successful decryption, the ciphertext is deleted from the storage.
+   */
+  decryptStoredFlash = async (salt: string, partition: string, id: string): Promise<string> => {
+    const plaintext = await this.decryptStored(salt, partition, id)
+
+    await this.storage.setCiphertext(partition, id, '')
+
+    return plaintext
+  }
 }
