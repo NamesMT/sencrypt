@@ -7,15 +7,15 @@ import { SHash } from '@namesmt/shash'
 import { validParams } from './utils'
 
 export interface SEncryptStorageInterface extends SHashStorageInterface {
-  // /**
-  //  * Get the ciphertext of the given partition and id.
-  //  */
-  // getCiphertext: (partition: string, id: string) => Promise<string | undefined>
+  /**
+   * Get ciphertext stored in the given partition and id.
+   */
+  getCiphertext: (partition: string, id: string) => Promise<string | undefined>
 
-  // /**
-  //  * Set the ciphertext for the given partition and id.
-  //  */
-  // setCiphertext: (partition: string, id: string, ciphertext: string) => Promise<void>
+  /**
+   * Set (store) ciphertext into the given partition and id.
+   */
+  setCiphertext: (partition: string, id: string, ciphertext: string) => Promise<void>
 }
 
 export interface SEncryptEncrypterInterface {
