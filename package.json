@@ -1,7 +1,7 @@
 {
   "name": "@namesmt/sencrypt",
   "type": "module",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "packageManager": "pnpm@9.6.0",
   "description": "",
   "author": "NamesMT <dangquoctrung123@gmail.com>",
