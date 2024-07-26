@@ -51,8 +51,13 @@ import { decrypt as aesGcmDecrypt, encrypt as aesGcmEncrypt } from '@namesmt/aes
 export class MemoryStorage implements SEncryptStorageInterface {
   saltStore: Record<string, string> = {}
 
+  cipherStore: Record<string, string> = {}
+
   async getSalt(partition: string, id: string) { return this.saltStore[`${partition}#${id}`] }
   async setSalt(partition: string, id: string, value: string) { this.saltStore[`${partition}#${id}`] = value }
+
+  async getCiphertext(partition: string, id: string) { return this.cipherStore[`${partition}#${id}`] }
+  async setCiphertext(partition: string, id: string, value: string) { this.cipherStore[`${partition}#${id}`] = value }
 }
 
 export class AesGcmEncrypter implements SEncryptEncrypterInterface {
@@ -68,11 +73,20 @@ function demoHash(str: string) {
 
 const {
   encrypt, // Encrypts plaintext into ciphertext, secured with a hash key created from the given salt, partition and id.
-  decrypt // Decrypts a ciphertext that was secured with a hash key created from the given salt, partition and id, back into plaintext.
+  encryptStore, // ^^^ but also stores the ciphertext into the storage.
+  decrypt, // Decrypts a ciphertext that was secured with a hash key created from the given salt, partition and id, back into plaintext.
+  decryptStored, // ^^^ but the ciphertext is retrieved from the storage.
+  decryptStoredFlash, // ^^^ and the ciphertext is deleted from the storage after decryption.
 } = new SEncrypt(new MemoryStorage(), demoHash, new AesGcmEncrypter()) // You could pass in any hashing and encryption algorithm.
 
 const encrypted = await encrypt('salt', 'partition', 'id', 'plaintext') // encrypted string of 'plaintext'
 const decrypted = await decrypt('salt', 'partition', 'id', encrypted) // returns 'plaintext'
+
+const storedEncrypted = await encryptStore('salt', 'partition', 'id', 'plaintext') // encrypted string of 'plaintext'
+const storedDecrypted = await decryptStored('salt', 'partition', 'id') // returns 'plaintext'
+const storedDecryptedFlash = await decryptStoredFlash('salt', 'partition', 'id') // returns 'plaintext'
+
+const storedDecrypted_error = await decryptStored('salt', 'partition', 'id') // Should throw an error because the ciphertext is not found.
 ```
 
 ## Roadmap
