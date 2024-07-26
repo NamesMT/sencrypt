@@ -15,7 +15,7 @@ describe('basic tests', () => {
       decrypt: expect.any(Function),
     })
 
-    // Encrypt and decrypt
+    // ### Encrypt and decrypt
     const encrypted = await helper.encrypt('salt', 'partition', 'id', 'pt')
     expect(encrypted).toBeTypeOf('string')
     const decrypted = await helper.decrypt('salt', 'partition', 'id', encrypted)
@@ -23,7 +23,21 @@ describe('basic tests', () => {
     // trying to decrypt with wrong password (different salt)
     await expect(helper.decrypt('salt2', 'partition', 'id', encrypted)).rejects.toThrowError('Invalid password')
 
-    // Invalid param
+    // ### Encrypt store and decrypt stored
+    const encryptedStored = await helper.encryptStore('salt', 'partition', 'id', 'pt')
+    expect(encryptedStored).toBeTypeOf('string')
+    const decryptedStored = await helper.decryptStored('salt', 'partition', 'id')
+    expect(decryptedStored).toBe('pt')
+    // trying to decrypt with wrong password (different salt)
+    await expect(helper.decryptStored('salt2', 'partition', 'id')).rejects.toThrowError('Invalid password')
+    // trying to decryptStored a non-existing ciphertext
+    await expect(helper.decryptStored('salt', 'partition', 'id234234')).rejects.toThrowError('Ciphertext not found')
+    // decryptStoredFlash should work (cipher should be cleared after first flash)
+    const decryptedStoredFlash = await helper.decryptStoredFlash('salt', 'partition', 'id')
+    expect(decryptedStoredFlash).toBe('pt')
+    await expect(helper.decryptStoredFlash('salt', 'partition', 'id')).rejects.toThrowError('Ciphertext not found')
+
+    // ### Invalid param
     // @ts-expect-error params should be strings
     await expect(helper.encrypt('salt', 'partition', 'id', 5)).rejects.toThrowError('Params invalid')
   })
