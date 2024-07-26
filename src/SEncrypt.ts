@@ -56,6 +56,18 @@ export class SEncrypt {
   }
 
   /**
+   * Encrypts plaintext into ciphertext, secured with a hash key created from the given salt, partition and id.  
+   * Also stores the ciphertext into the storage.
+   */
+  encryptStore = async (salt: string, partition: string, id: string, plaintext: string): Promise<string> => {
+    const encrypted = await this.encrypt(salt, partition, id, plaintext)
+
+    await this.storage.setCiphertext(partition, id, encrypted)
+
+    return encrypted
+  }
+
+  /**
    * Decrypts a ciphertext that was secured with a hash key created from the given salt, partition and id, back into plaintext.
    */
   decrypt = async (salt: string, partition: string, id: string, ciphertext: string): Promise<string> => {
@@ -64,5 +76,19 @@ export class SEncrypt {
     validParams(ciphertext)
 
     return await this.encrypter.decrypt(ciphertext, cKey)
+  }
+
+  /**
+   * Retrieves the ciphertext from the storage, then,  
+   * Decrypts a ciphertext that was secured with a hash key created from the given salt, partition and id, back into plaintext.  
+   */
+  decryptStored = async (salt: string, partition: string, id: string): Promise<string> => {
+    const ciphertext = await this.storage.getCiphertext(partition, id)
+
+    if (!ciphertext) {
+      throw new Error(`Ciphertext not found for partition ${partition} and id ${id}`)
+    }
+
+    return await this.decrypt(salt, partition, id, ciphertext)
   }
 }
