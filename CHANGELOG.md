@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.5
+
+[compare changes](https://github.com/namesmt/sencrypt/compare/v0.1.4...v0.1.5)
+
+### 🏡 Chore
+
+- Housekeeping ([e80ab27](https://github.com/namesmt/sencrypt/commit/e80ab27))
+
+### ❤️ Contributors
+
+- NamesMT ([@NamesMT](http://github.com/NamesMT))
+
 ## v0.1.4
 
 [compare changes](https://github.com/namesmt/sencrypt/compare/v0.1.3...v0.1.4)
