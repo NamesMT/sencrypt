@@ -32,8 +32,8 @@ importers:
         specifier: ^2.1.8
         version: 2.1.8(vitest@2.1.8(@types/node@20.17.10))
       consola:
-        specifier: ^3.3.0
-        version: 3.3.0
+        specifier: ^3.3.1
+        version: 3.3.1
       eslint:
         specifier: ^9.17.0
         version: 9.17.0(jiti@1.21.6)
@@ -71,8 +71,8 @@ importers:
         specifier: ^5.4.11
         version: 5.4.11(@types/node@20.17.10)
       vite-plugin-inspect:
-        specifier: ^0.10.4
-        version: 0.10.4(rollup@4.21.0)(vite@5.4.11(@types/node@20.17.10))
+        specifier: ^0.10.6
+        version: 0.10.6(rollup@4.21.0)(vite@5.4.11(@types/node@20.17.10))
 
 packages:
 
@@ -829,15 +829,6 @@ packages:
       rollup:
         optional: true
 
-  '@rollup/pluginutils@5.1.3':
-    resolution: {integrity: sha512-Pnsb6f32CD2W3uCaLZIzDmeFyQ2b8UWMFI7xtwUezpcGBDVDW6y9XgAWIlARiGAo6eNF5FK5aQTr0LFyNyqq5A==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
-    peerDependenciesMeta:
-      rollup:
-        optional: true
-
   '@rollup/pluginutils@5.1.4':
     resolution: {integrity: sha512-USm05zrsFxYLPdWWq+K3STlWiT/3ELn3RcV5hJMghpeAIhxfsUIg6mt12CBJBInWMV4VneoV7SfGv8xIwo2qNQ==}
     engines: {node: '>=14.0.0'}
@@ -1345,8 +1336,8 @@ packages:
   confbox@0.1.7:
     resolution: {integrity: sha512-uJcB/FKZtBMCJpK8MQji6bJHgu1tixKPxRLeGkNzBoOZzpnZUJm0jm2/sBDWcuBx1dYgxV4JU+g5hmNxCyAmdA==}
 
-  consola@3.3.0:
-    resolution: {integrity: sha512-kxltocVQCwQNFvw40dlVRYeAkAvtYjMFZYNlOcsF5wExPpGwPxMwgx4IfDJvBRPtBpnQwItd5WkTaR0ZwT/TmQ==}
+  consola@3.3.1:
+    resolution: {integrity: sha512-GyKnPG3/I+a4RtJxgHquJXWr70g9I3c4NT3dvqh0LPHQP2nZFQBOBszb7a5u/pGzqr40AKplQA6UxM1BSynSXg==}
     engines: {node: ^14.18.0 || >=16.10.0}
 
   convert-source-map@2.0.0:
@@ -2998,8 +2989,8 @@ packages:
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
-  vite-plugin-inspect@0.10.4:
-    resolution: {integrity: sha512-3BiPCdcINAxoHtSaVy1Fn54a02ghTNXzgAEN+Ad19MhRSnDLKyYplAHyXiWEOF90t3gO8Czvm/x/qblvfb4vJA==}
+  vite-plugin-inspect@0.10.6:
+    resolution: {integrity: sha512-R3pwljjBbjFM2sZvy6Zvynnm51oaEwLYyYPk9Wp2lF97w/YMBq+KtTJXpCA17IO2pImX0bWA6WB05kuqRnkuyQ==}
     engines: {node: '>=14'}
     peerDependencies:
       '@nuxt/kit': '*'
@@ -3678,7 +3669,7 @@ snapshots:
 
   '@rollup/plugin-commonjs@25.0.8(rollup@3.29.4)':
     dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@3.29.4)
+      '@rollup/pluginutils': 5.1.4(rollup@3.29.4)
       commondir: 1.0.1
       estree-walker: 2.0.2
       glob: 8.1.0
@@ -3689,13 +3680,13 @@ snapshots:
 
   '@rollup/plugin-json@6.1.0(rollup@3.29.4)':
     dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@3.29.4)
+      '@rollup/pluginutils': 5.1.4(rollup@3.29.4)
     optionalDependencies:
       rollup: 3.29.4
 
   '@rollup/plugin-node-resolve@15.2.3(rollup@3.29.4)':
     dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@3.29.4)
+      '@rollup/pluginutils': 5.1.4(rollup@3.29.4)
       '@types/resolve': 1.20.2
       deepmerge: 4.3.1
       is-builtin-module: 3.2.1
@@ -3706,7 +3697,7 @@ snapshots:
 
   '@rollup/plugin-replace@5.0.7(rollup@3.29.4)':
     dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@3.29.4)
+      '@rollup/pluginutils': 5.1.4(rollup@3.29.4)
       magic-string: 0.30.11
     optionalDependencies:
       rollup: 3.29.4
@@ -3719,7 +3710,7 @@ snapshots:
     optionalDependencies:
       rollup: 3.29.4
 
-  '@rollup/pluginutils@5.1.3(rollup@3.29.4)':
+  '@rollup/pluginutils@5.1.4(rollup@3.29.4)':
     dependencies:
       '@types/estree': 1.0.6
       estree-walker: 2.0.2
@@ -4225,7 +4216,7 @@ snapshots:
 
   citty@0.1.6:
     dependencies:
-      consola: 3.3.0
+      consola: 3.3.1
 
   clean-regexp@1.0.0:
     dependencies:
@@ -4274,7 +4265,7 @@ snapshots:
 
   confbox@0.1.7: {}
 
-  consola@3.3.0: {}
+  consola@3.3.1: {}
 
   convert-source-map@2.0.0: {}
 
@@ -5983,7 +5974,7 @@ snapshots:
       '@rollup/pluginutils': 5.1.0(rollup@3.29.4)
       chalk: 5.3.0
       citty: 0.1.6
-      consola: 3.3.0
+      consola: 3.3.1
       defu: 6.1.4
       esbuild: 0.19.12
       globby: 13.2.2
@@ -6063,7 +6054,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-inspect@0.10.4(rollup@4.21.0)(vite@5.4.11(@types/node@20.17.10)):
+  vite-plugin-inspect@0.10.6(rollup@4.21.0)(vite@5.4.11(@types/node@20.17.10)):
     dependencies:
       '@antfu/utils': 0.7.10
       '@rollup/pluginutils': 5.1.4(rollup@4.21.0)
