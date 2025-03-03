@@ -2,7 +2,7 @@
   "name": "@namesmt/sencrypt",
   "type": "module",
   "version": "0.1.5",
-  "packageManager": "pnpm@9.15.6",
+  "packageManager": "pnpm@10.5.2",
   "description": "",
   "author": "NamesMT <dangquoctrung123@gmail.com>",
   "license": "MIT",
