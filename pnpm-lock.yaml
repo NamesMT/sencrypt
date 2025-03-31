@@ -20,8 +20,8 @@ importers:
         specifier: ^2.27.3
         version: 2.27.3(@typescript-eslint/utils@8.18.0(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.2))(@vue/compiler-sfc@3.4.38)(eslint@9.22.0(jiti@1.21.6))(typescript@5.8.2)(vitest@2.1.9(@types/node@20.17.23))
       '@namesmt/aes-gcm':
-        specifier: ^0.1.3
-        version: 0.1.3
+        specifier: ^1.0.0
+        version: 1.0.0
       '@namesmt/utils':
         specifier: ^0.5.9
         version: 0.5.9
@@ -886,8 +886,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@namesmt/aes-gcm@0.1.3':
-    resolution: {integrity: sha512-VYaDtd02VDPwRatkadC1ohnigx3g6fLW+ulMsSD9IKywFpkC4DQuoL2IdMoWk/RTUhckFGXnDgdw79UAHrjcdA==}
+  '@namesmt/aes-gcm@1.0.0':
+    resolution: {integrity: sha512-zGvrPiltNxaLuUm7rTNvIlRd3hSoICjFaUP4XzdlXoMRsiffvL+X2KrihiFGvRP3ADt1cYUlX9KRJsWN/505ag==}
     engines: {node: '>=20.13.1'}
 
   '@namesmt/shash@0.3.5':
@@ -3834,7 +3834,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@namesmt/aes-gcm@0.1.3':
+  '@namesmt/aes-gcm@1.0.0':
     dependencies:
       uint8array-extras: 1.4.0
 
