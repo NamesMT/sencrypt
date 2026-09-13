@@ -38,17 +38,17 @@ export interface SEncryptEncrypterInterface {
  * @param encrypter - The encryption algorithm, which should return a string.
  */
 export class SEncrypt {
-  private SHash: SHash
+  private shash: SHash
 
   constructor(private storage: SEncryptStorageInterface, private hasher: (input: string) => string | Promise<string>, private encrypter: SEncryptEncrypterInterface) {
-    this.SHash = new SHash(this.storage, this.hasher)
+    this.shash = new SHash(this.storage, this.hasher)
   }
 
   /**
    * Encrypts plaintext into ciphertext, secured with a hash key created from the given salt, partition and id.
    */
   encrypt = async (salt: string, partition: string, id: string, plaintext: string): Promise<string> => {
-    const cKey = await this.SHash.getHash(salt, partition, id)
+    const cKey = await this.shash.getHash(salt, partition, id)
 
     validParams(plaintext)
 
@@ -71,7 +71,7 @@ export class SEncrypt {
    * Decrypts a ciphertext that was secured with a hash key created from the given salt, partition and id, back into plaintext.
    */
   decrypt = async (salt: string, partition: string, id: string, ciphertext: string): Promise<string> => {
-    const cKey = await this.SHash.getHash(salt, partition, id)
+    const cKey = await this.shash.getHash(salt, partition, id)
 
     validParams(ciphertext)
 
