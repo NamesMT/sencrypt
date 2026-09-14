@@ -1,6 +1,31 @@
 # Changelog
 
 
+## v0.1.6
+
+[compare changes](https://github.com/namesmt/sencrypt/compare/v0.1.5...v0.1.6)
+
+### 🩹 Fixes
+
+- Resolve typecheck failures against @namesmt/shash@0.3.5 ([9d37ad6](https://github.com/namesmt/sencrypt/commit/9d37ad6))
+- Use relative paths (drop deprecated `baseUrl`) ([440635d](https://github.com/namesmt/sencrypt/commit/440635d))
+
+### 💅 Refactors
+
+- Strengthen internal types and avoid field/type shadowing ([913bc74](https://github.com/namesmt/sencrypt/commit/913bc74))
+
+### 🏡 Chore
+
+- Migrate to pnpm 12 ([c9a82da](https://github.com/namesmt/sencrypt/commit/c9a82da))
+
+### 🤖 CI
+
+- Use pnpm/action-setup for pnpm 12 ([fcb80f0](https://github.com/namesmt/sencrypt/commit/fcb80f0))
+
+### ❤️ Contributors
+
+- NamesMT ([@NamesMT](https://github.com/NamesMT))
+
 ## v0.1.5
 
 [compare changes](https://github.com/namesmt/sencrypt/compare/v0.1.4...v0.1.5)
