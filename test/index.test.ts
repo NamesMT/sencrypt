@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { MemoryStorage } from './utils/storage/memory'
 import { SimpleEncrypter } from './utils/encrypter/simple'
 import { AesGcmEncrypter } from './utils/encrypter/aes-gcm'
-import { SEncrypt } from '~/index'
+import { SEncrypt } from '#src/index.js'
 
 describe('basic tests', () => {
   it('basic usages should work', async () => {

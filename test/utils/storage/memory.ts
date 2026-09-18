@@ -1,4 +1,4 @@
-import type { SEncryptStorageInterface } from '~/SEncrypt'
+import type { SEncryptStorageInterface } from '#src/SEncrypt.js'
 
 /**
  * This is a simple in-memory storage implementation.

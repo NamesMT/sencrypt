@@ -1,4 +1,4 @@
-import type { SEncryptEncrypterInterface } from '~/SEncrypt'
+import type { SEncryptEncrypterInterface } from '#src/SEncrypt.js'
 
 /**
  * This is a simple demo encrypter implementation.
