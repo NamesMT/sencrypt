@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v0.1.7
+
+[compare changes](https://github.com/namesmt/sencrypt/compare/v0.1.6...v0.1.7)
+
+### 📦 Build
+
+- ⚠️  Migrate to tsdown with native import maps ([0a07dbc](https://github.com/namesmt/sencrypt/commit/0a07dbc))
+
+### 🤖 CI
+
+- Bump node to 22 ([0c57a10](https://github.com/namesmt/sencrypt/commit/0c57a10))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Migrate to tsdown with native import maps ([0a07dbc](https://github.com/namesmt/sencrypt/commit/0a07dbc))
+
+### ❤️ Contributors
+
+- NamesMT ([@NamesMT](https://github.com/NamesMT))
+
 ## v0.1.6
 
 [compare changes](https://github.com/namesmt/sencrypt/compare/v0.1.5...v0.1.6)

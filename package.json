@@ -1,7 +1,7 @@
 {
   "name": "@namesmt/sencrypt",
   "type": "module",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "packageManager": "pnpm@12.4.1",
   "description": "Stateful encryption layer built on top of @namesmt/shash",
   "author": "NamesMT <dangquoctrung123@gmail.com>",
