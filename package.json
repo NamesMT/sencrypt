@@ -7,16 +7,25 @@
   "author": "NamesMT <dangquoctrung123@gmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/namesmt",
-  "homepage": "https://github.com/namesmt/sencrypt#readme",
+  "homepage": "https://github.com/NamesMT/sencrypt#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/namesmt/sencrypt.git"
+    "url": "git+https://github.com/NamesMT/sencrypt.git"
   },
-  "bugs": "https://github.com/namesmt/sencrypt/issues",
+  "bugs": "https://github.com/NamesMT/sencrypt/issues",
   "keywords": [
     "encrypt",
     "salt",
-    "secret"
+    "secret",
+    "encryption",
+    "decryption",
+    "hashing",
+    "ciphertext",
+    "stateful-salt",
+    "security",
+    "crypto",
+    "typescript",
+    "esm"
   ],
   "sideEffects": false,
   "exports": {

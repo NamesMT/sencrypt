@@ -38,6 +38,7 @@ pnpm exec vitest run      # one-shot suite (`pnpm run test` watches)
   `main`/`module`/`types` into `dist/`, and `prepublishOnly` builds — never add a CJS build or publish a stale `dist`.
 - Encryption is deliberately out of scope: callers pass their own `SEncryptEncrypterInterface`.
   AES-GCM is a dev dependency used by the tests and the README demo, not a runtime dependency.
+- Argument order is fixed everywhere: `(salt, partition, id, …)`; `salt` is an app-wide secret, `partition` a group, `id` the per-secret lookup key.
 
 ## Releasing
 
@@ -53,3 +54,5 @@ pnpm exec vitest run      # one-shot suite (`pnpm run test` watches)
 - Release runs Node 24 while `engines` and CI require Node >= 22.
 - changelogen's `--clean` (release workflow) fails when `git status --porcelain` is dirty; ignored files such as `dist/` do not count.
 - pnpm workspace (`pnpm-workspace.yaml` lists `playground`) — install from the root.
+- Each method validates only what it consumes: `salt` is never checked, `partition`/`id` only via `SHash`, and `encrypt`/`decrypt` additionally reject empty plaintext/ciphertext — passing `''` is what throws.
+- `decryptStoredFlash` clears the stored ciphertext by writing `''`, not by deleting the row; `decryptStored` on that id then throws `Ciphertext not found`.
