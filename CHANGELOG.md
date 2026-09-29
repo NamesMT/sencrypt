@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.1.8
+
+[compare changes](https://github.com/NamesMT/sencrypt/compare/v0.1.7...v0.1.8)
+
+### 📖 Documentation
+
+- Add npm metadata and correct repository URL casing ([a94c5b1](https://github.com/NamesMT/sencrypt/commit/a94c5b1))
+
+### 🏡 Chore
+
+- **devcontainer:** Migrate from Alpine (musl) to Arch (glibc) image ([d7db863](https://github.com/NamesMT/sencrypt/commit/d7db863))
+- **devcontainer:** Bootstrap pnpm via corepack when missing ([56c6eea](https://github.com/NamesMT/sencrypt/commit/56c6eea))
+
+### 🤖 CI
+
+- **release:** Dispatch releases by hand and add an AGENTS.md ([019bb96](https://github.com/NamesMT/sencrypt/commit/019bb96))
+
+### ❤️ Contributors
+
+- NamesMT ([@NamesMT](https://github.com/NamesMT))
+
 ## v0.1.7
 
 [compare changes](https://github.com/namesmt/sencrypt/compare/v0.1.6...v0.1.7)
