@@ -54,6 +54,28 @@ pnpm exec vitest run      # one-shot suite (`pnpm run test` watches)
   AES-GCM is a dev dependency used by the tests and the README demo, not a runtime dependency.
 - Argument order is fixed everywhere: `(salt, partition, id, …)`; `salt` is an app-wide secret, `partition` a group, `id` the per-secret lookup key.
 
+## How to work here
+
+Check callers before changing; say when impact is unclear. Never overwrite a large section you have not
+understood. Surface what looks needed instead of inventing requirements. Report the risk, not only the
+change: correctness, security, operational, integration. **Fix the root cause, not the instance** — a
+copied helper, a rule stated twice, a guard bypassed by a second path is a class: one implementation,
+one guard; that is the work. Verify before claiming and say what you checked. A green test proves only
+what it asserts — break the thing it guards and watch it fail; if it still passes, either the
+test is decoration or a different guard is running. Where a stub cannot answer the question,
+drive the real thing. If recall is missing, read this file and `git log` first.
+
+## Conciseness
+
+Prune verbose, keep correctness — code, comments, docs alike. Comments only for non-obvious intent;
+one idea per sentence; cut what would not change what a reader does. Delete history `git log` already
+holds — the rule, not the story. Never drop a caveat to save a line.
+
+## User-facing docs
+
+`README.md` is the only person-facing doc — this repo has no `docs/`. Docs ship with the change, in the
+same commit.
+
 ## Releasing
 
 - Manual, version-first: dispatch **Actions → Release → Run workflow** with the version.
@@ -70,23 +92,3 @@ pnpm exec vitest run      # one-shot suite (`pnpm run test` watches)
 - pnpm workspace (`pnpm-workspace.yaml` lists `playground`) — install from the root.
 - Each method validates only what it consumes: `salt` is never checked, `partition`/`id` only via `SHash`, and `encrypt`/`decrypt` additionally reject empty plaintext/ciphertext — passing `''` is what throws.
 - `decryptStoredFlash` clears the stored ciphertext by writing `''`, not by deleting the row; `decryptStored` on that id then throws `Ciphertext not found`.
-
-## How to work here
-
-Check callers before changing; say when impact is unclear. Never overwrite a large section you have not
-understood. Surface what looks needed instead of inventing requirements. Report the risk, not only the
-change: correctness, security, operational, integration. **Fix the root cause, not the instance** — a
-copied helper, a rule stated twice, a guard bypassed by a second path is a class: one implementation,
-one guard; that is the work. Verify before claiming and name the direction checked; a passing test is
-not evidence it pinned anything. If recall is missing, read this file and `git log` first.
-
-## Conciseness (applies everywhere)
-
-Prune verbose, keep correctness — code, comments, docs alike. Comments only for non-obvious intent;
-one idea per sentence; cut what would not change what a reader does. Delete history `git log` already
-holds — the rule, not the story. Never drop a caveat to save a line.
-
-## User-facing docs
-
-`README.md` is the only person-facing doc — this repo has no `docs/`. Docs ship with the change, in the
-same commit.
