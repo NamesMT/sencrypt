@@ -74,5 +74,5 @@ holds — the rule, not the story. Never drop a caveat to save a line.
 
 ## User-facing docs
 
-`README.md` is the only person-facing doc — this repo has no `docs/`: short first read, depth in
-`<details>` spoilers, visuals for skimmers. Docs ship with the change, in the same commit.
+`README.md` is the only person-facing doc — this repo has no `docs/`. Docs ship with the change, in the
+same commit.
