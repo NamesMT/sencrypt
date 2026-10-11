@@ -67,7 +67,8 @@ drive the real thing. If recall is missing, read this file and `git log` first.
 
 ## Conciseness
 
-Prune verbose, keep correctness — code, comments, docs alike. Comments only for non-obvious intent;
+Prune verbose, keep correctness — code, comments, docs alike. Comments only for non-obvious intent,
+and short — a block arguing for its own change is a commit message;
 one idea per sentence; cut what would not change what a reader does. Delete history `git log` already
 holds — the rule, not the story. Never drop a caveat to save a line.
 
